@@ -10,6 +10,7 @@ const { post } = Astro.props;
 
 const {
   slug,
+  body,
   data: { title, cover },
 } = post;
 ---
@@ -25,5 +26,8 @@ const {
       class="rounded-2xl shadow-xl mb-6 aspect-thumbnail object-cover"
     />
   </a>
-  <h2>{post.data.title}</h2>
+  <a href={`/blog/${slug}`} class="text-4xl text-zinc-900 mb-4 font-semibold inline-block">
+    <h2>{title}</h2>  
+  </a>
+  <p class="text-zinc-500 text-2xl mb-9 line-clamp-3">{body}</p>
 </article>
