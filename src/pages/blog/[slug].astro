@@ -32,6 +32,12 @@ const { Content, headings } = await post.render();
 
 <Layout title={title}>
   <Main>
+    <a
+      id="top"
+      href="#top"
+      class="text-xs text-transparent"
+      >Top Anchor</a
+    >
     <div class="border-b-4 border-zinc-500 w-fit mb-16">
       <a
         href="/blog"
@@ -59,5 +65,10 @@ const { Content, headings } = await post.render();
         <Content />
       </div>
     </div>
+    <a
+      href="#top"
+      class="text-zinc-500 underline"
+      >Back to Top</a
+    >
   </Main>
 </Layout>

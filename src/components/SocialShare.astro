@@ -13,6 +13,7 @@ const { post } = Astro.props;
   <a
     href={`https://twitter.com/intent/tweet?url=https://rhythm.nation/blog/${post.slug}`}
   >
+    <span class="hidden assistive-text">Share post on Twitter</span>
     <Icon
       name="twitter"
       class="text-zinc-600 size-8"
@@ -22,6 +23,7 @@ const { post } = Astro.props;
   <a
     href={`https://www.linkedin.com/sharing/share-offsite/?url=https://rhythm.nation/blog/${post.slug}`}
   >
+    <span class="hidden assistive-text">Share post on Linkedin</span>
     <Icon
       name="linkedin"
       class="text-zinc-600 size-8"
