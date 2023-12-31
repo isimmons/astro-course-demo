@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import H1 from "~/components/H1.astro";
 import Main from "~/components/Main.astro";
 import PostsList from "~/components/PostsList.astro";
 import Layout from "~/layouts/BaseLayout.astro";
@@ -9,11 +10,10 @@ const posts = await getCollection("posts");
 
 <Layout title="Blog - Astro Course">
   <Main>
-    <h1 class="text-6xl text-teal-900 font-bold mb-5">Rhythm Nation Blog</h1>
-      <p class="text-zinc-900 text-2xl mb-24 max-sm:mb-14">
-        Join the community and learn from Music Producers and Enthusiasts hey foo
-      </p>
-      <PostsList posts={posts} />
+    <H1 text="Rhythm Nation Blog" />
+    <p class="text-zinc-900 text-2xl mb-24 max-sm:mb-14">
+      Join the community and learn from Music Producers and Enthusiasts hey foo
+    </p>
+    <PostsList posts={posts} />
   </Main>
-  
 </Layout>
