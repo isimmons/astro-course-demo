@@ -2,6 +2,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Main from '~/components/Main.astro';
 import Layout from '~/layouts/BaseLayout.astro';
+import { Icon } from 'astro-icon/components';
 
 export const getStaticPaths = async () => {
   const posts = await getCollection("posts");
@@ -20,6 +21,10 @@ const { post: {data : { title, author }} } = Astro.props;
 
 <Layout title={title}>
   <Main>
+    <a href="/blog">
+      <Icon name="arrow-left" class="size-5 inline mr-2" />
+      Back to all posts
+    </a>
     <h1>{title}</h1>
     <p>{author}</p>
   </Main>
