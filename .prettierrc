@@ -5,5 +5,13 @@
   "useTabs": false,
   "semi": true,
   "arrowParens": "always",
-  "singleAttributePerLine": true
+  "singleAttributePerLine": true,
+  "overrides": [
+    {
+      "files": ["src/layouts/BaseLayout.astro"],
+      "options": {
+        "singleAttributePerLine": false
+      }
+    }
+  ]
 }
