@@ -10,4 +10,5 @@ export default defineConfig({
     port: 3000,
   },
   integrations: [sentry(), spotlightjs(), tailwind(), icon()],
+  site: "https://rhythm.nation",
 });
