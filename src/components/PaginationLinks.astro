@@ -1,0 +1,35 @@
+---
+type Props = {
+  prev?: string | undefined;
+  next?: string | undefined;
+};
+
+const { prev, next } = Astro.props;
+---
+
+<div class="flex justify-between">
+  {
+    prev ? (
+      <a
+        href={prev}
+        class="bg-teal-900 text-white py-3 px-6 rounded-xl"
+      >
+        Previous
+      </a>
+    ) : (
+      <div />
+    )
+  }
+  {
+    next ? (
+      <a
+        href={next}
+        class="bg-teal-900 text-white py-3 px-6 rounded-xl"
+      >
+        Next
+      </a>
+    ) : (
+      <div />
+    )
+  }
+</div>
