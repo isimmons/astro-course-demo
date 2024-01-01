@@ -6,6 +6,8 @@ import H1 from "~/components/H1.astro";
 import Main from "~/components/Main.astro";
 import PostsList from "~/components/PostsList.astro";
 import PaginationLinks from "~/components/PaginationLinks.astro";
+import CategoryList from "~/components/CategoryList.astro";
+import { getCategoriesFromPosts } from "~/utils";
 
 export const getStaticPaths: GetStaticPaths = async ({ paginate }) => {
   const posts = await getCollection("posts");
@@ -18,6 +20,7 @@ type Props = {
 
 const { page } = Astro.props;
 const posts = page.data;
+const categories = getCategoriesFromPosts(posts);
 ---
 
 <Layout
@@ -31,6 +34,12 @@ const posts = page.data;
     <p class="text-zinc-900 text-2xl mb-24 max-sm:mb-14">
       Join the community and learn from Music Producers and Enthusiasts hey foo
     </p>
+    <div
+      class="grid grid-cols-[auto,1fr] gap-x-14 gap-y-3 mb-16 max-lg:grid-cols-1"
+    >
+      <h2 class="font-bold text-5xl text-teal-900">Tags</h2>
+      <CategoryList categories={categories} />
+    </div>
     <div class="mb-12">
       <PaginationLinks
         next={page.url.next}

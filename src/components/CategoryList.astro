@@ -1,0 +1,14 @@
+---
+import { type CollectionEntry } from "astro:content";
+import CategoryBadge from "./CategoryBadge.astro";
+
+type Props = {
+  categories: CollectionEntry<"posts">["data"]["categories"];
+};
+
+const { categories } = Astro.props;
+---
+
+<div class="flex gap-4 flex-wrap items-center">
+  {categories.map((c) => <CategoryBadge category={c} />)}
+</div>
