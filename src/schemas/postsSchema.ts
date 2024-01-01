@@ -12,6 +12,7 @@ const postSchema = ({ image }: SchemaContext) =>
     title: z
       .string()
       .min(3, { message: "A post title but be at least 3 characters." }),
+    description: z.string().optional(),
     author: z
       .string()
       .min(3, { message: "An authors name must be at least 3 characters." })

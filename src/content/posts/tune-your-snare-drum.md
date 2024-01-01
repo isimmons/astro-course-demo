@@ -1,10 +1,11 @@
 ---
+title: Tune your snare drum
+description: A guide to achieving the perfect snare drum sound, including tuning tips and techniques.
 author: michael-scott
 categories: ["studio tips"]
 date: 08/10/2021
 featured: false
 cover: ./images/drums.jpg
-title: Tune your snare drum
 ---
 
 Collaboration is a key component of many creative endeavors, and music production is no exception. In fact, collaboration can be essential to the success of a music project, as it allows for the pooling of diverse talents and perspectives to create something truly unique and compelling.

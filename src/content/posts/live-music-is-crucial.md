@@ -1,10 +1,11 @@
 ---
+title: Live music is crucial
+description: An argument for the importance of live music experiences and their impact on both performers and audiences.
 author: jim-halpert
 categories: ["insights"]
 date: 08/10/2021
 featured: false
 cover: ./images/concert.jpg
-title: Live music is crucial
 ---
 
 Collaboration is a key component of many creative endeavors, and music production is no exception. In fact, collaboration can be essential to the success of a music project, as it allows for the pooling of diverse talents and perspectives to create something truly unique and compelling.

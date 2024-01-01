@@ -1,10 +1,11 @@
 ---
+title: Behind-the-scenes with our artists
+description: A look at the creative process and inspiration behind the music of our talented artists.
 author: dwight-schrute
 categories: ["studio tips"]
 date: 08/10/2021
 featured: false
 cover: ./images/photoshoot.jpg
-title: Behind-the-scenes with our artists
 ---
 
 Collaboration is a key component of many creative endeavors, and music production is no exception. In fact, collaboration can be essential to the success of a music project, as it allows for the pooling of diverse talents and perspectives to create something truly unique and compelling.

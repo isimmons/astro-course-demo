@@ -1,10 +1,11 @@
 ---
+title: Creating a successful music brand
+description: Tips and strategies for building a strong brand identity as a musician or music business.
 author: pam-beesely
 categories: ["career advice"]
 date: 08/10/2021
 featured: false
 cover: ./images/record.jpg
-title: Creating a successful music brand
 ---
 
 Collaboration is a key component of many creative endeavors, and music production is no exception. In fact, collaboration can be essential to the success of a music project, as it allows for the pooling of diverse talents and perspectives to create something truly unique and compelling.
