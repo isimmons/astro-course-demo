@@ -5,14 +5,14 @@ import "@fontsource/cabin";
 
 interface Props {
   title: string;
-  description?: string;
-  image?: string;
+  description?: string | undefined;
+  image: string;
 }
 
 const {
   title,
   description = "A community of music producers and enthusiasts",
-  image = "/images/drums",
+  image = "images/drums.jpg",
 } = Astro.props;
 ---
 

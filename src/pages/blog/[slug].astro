@@ -20,17 +20,19 @@ type Props = {
   post: CollectionEntry<"posts">;
 };
 
-const {
-  post,
-  post: {
-    data: { title, cover },
-  },
-} = Astro.props;
+const { post } = Astro.props;
+
+const { title, cover, description } = post.data;
 
 const { Content, headings } = await post.render();
 ---
 
-<Layout title={title}>
+<Layout
+  title={title}
+  ,
+  image={cover.src}
+  description={description}
+>
   <Main>
     <a
       id="top"
