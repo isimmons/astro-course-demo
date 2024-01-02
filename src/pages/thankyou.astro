@@ -2,7 +2,6 @@
 import Layout from "~/layouts/BaseLayout.astro";
 import H1 from "~/components/H1.astro";
 import Main from "~/components/Main.astro";
-import ContactForm from "~/components/ContactForm.svelte";
 ---
 
 <Layout
@@ -11,11 +10,9 @@ import ContactForm from "~/components/ContactForm.svelte";
   image="/images/drums.jpg"
 >
   <Main>
-    <H1 text="Contact" />
-    <div class="mb-20">
-      <ContactForm client:load />
-    </div>
+    <H1 text="Rhythm Nation Blog" />
+    <p class="text-zinc-900 text-2xl mb-24 max-sm:mb-14">
+      Thanks for reaching out! We'll get back to you as soon as we can.
+    </p>
   </Main>
 </Layout>
-
-<script></script>
