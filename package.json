@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/check": "^0.3.4",
     "@astrojs/rss": "^4.0.1",
+    "@astrojs/svelte": "^5.0.3",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource/cabin": "^5.0.16",
     "@sentry/astro": "^7.91.0",
@@ -23,6 +24,7 @@
     "date-fns": "^3.0.6",
     "markdown-it": "^14.0.0",
     "sanitize-html": "^2.11.0",
+    "svelte": "^4.2.8",
     "tailwindcss": "^3.4.0",
     "typescript": "^5.3.3"
   },
