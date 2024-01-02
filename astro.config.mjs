@@ -6,8 +6,10 @@ import icon from "astro-icon";
 
 import svelte from "@astrojs/svelte";
 
+const devIntegrations = [sentry(), spotlightjs()];
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [sentry(), spotlightjs(), tailwind(), icon(), svelte()],
-  site: "https://rhythm.nation"
+  integrations: [tailwind(), icon(), svelte()],
+  site: "https://rhythm.nation",
 });
