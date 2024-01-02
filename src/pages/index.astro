@@ -27,12 +27,10 @@ const categories = getCategoriesFromPosts(recentPosts);
     </p>
     {featuredPosts.map((p) => <FeaturedPost post={p} />)}
     <hr class="w-full border border-teal-900 mb-16 max-sm:mb-10" />
-    <div
-      class="grid grid-cols-[auto,1fr] gap-x-14 gap-y-3 mb-16 max-lg:grid-cols-1"
-    >
-      <h2 class="font-bold text-5xl text-teal-900">Recent Posts</h2>
-      <CategoryList categories={categories} />
-    </div>
+    <CategoryList
+      categories={categories}
+      title="Recent Posts"
+    />
     <div class="mb-32">
       <PostsList posts={recentPosts} />
     </div>
