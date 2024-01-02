@@ -1,14 +1,18 @@
 ---
 import { getCollection } from "astro:content";
+import CategoryList from "~/components/CategoryList.astro";
 import FeaturedPost from "~/components/FeaturedPost.astro";
 import H1 from "~/components/H1.astro";
 import Main from "~/components/Main.astro";
+import PostsList from "~/components/PostsList.astro";
 import Layout from "~/layouts/BaseLayout.astro";
+import { getCategoriesFromPosts } from "~/utils";
 
 const allPosts = await getCollection("posts");
 
-// const regularPosts = allPosts.filter((p) => !p.data.featured).slice(0, 4);
+const recentPosts = allPosts.filter((p) => !p.data.featured).slice(0, 4);
 const featuredPosts = allPosts.filter((p) => p.data.featured);
+const categories = getCategoriesFromPosts(recentPosts);
 ---
 
 <Layout
@@ -23,5 +27,21 @@ const featuredPosts = allPosts.filter((p) => p.data.featured);
     </p>
     {featuredPosts.map((p) => <FeaturedPost post={p} />)}
     <hr class="w-full border border-teal-900 mb-16 max-sm:mb-10" />
+    <div
+      class="grid grid-cols-[auto,1fr] gap-x-14 gap-y-3 mb-16 max-lg:grid-cols-1"
+    >
+      <h2 class="font-bold text-5xl text-teal-900">Recent Posts</h2>
+      <CategoryList categories={categories} />
+    </div>
+    <div class="mb-32">
+      <PostsList posts={recentPosts} />
+    </div>
+    <div class="flex justify-end mb-60 max-sm:mb-36">
+      <a
+        href="/blog"
+        class="bg-teal-900 text-white py-3 px-6 rounded-xl text-xl"
+        >Read More Posts</a
+      >
+    </div>
   </Main>
 </Layout>
