@@ -4,7 +4,7 @@ import Main from "~/components/Main.astro";
 import Layout from "~/layouts/BaseLayout.astro";
 import { Icon } from "astro-icon/components";
 import H1 from "~/components/H1.astro";
-import { Image } from "astro:assets";
+import { Image, getImage } from "astro:assets";
 import TableOfContents from "~/components/TableOfContents.astro";
 import SocialShare from "~/components/SocialShare.astro";
 
@@ -21,15 +21,14 @@ type Props = {
 };
 
 const { post } = Astro.props;
-
 const { title, cover, description } = post.data;
-
 const { Content, headings } = await post.render();
+const coverImageSrc = (await getImage({ src: cover })).src;
 ---
 
 <Layout
   title={title}
-  image={cover.src}
+  image={coverImageSrc}
   description={description}
 >
   <Main>
@@ -55,6 +54,8 @@ const { Content, headings } = await post.render();
     <Image
       src={cover}
       alt={title}
+      height={1024}
+      width={1024}
       class="rounded-2xl shadow-xl mb-28 aspect-thumbnail object-cover"
     />
     <div class="mb-10">

@@ -17,17 +17,20 @@ const {
 
 <article>
   <a href={`/blog/${slug}`}>
-    <span class="hidden assistive-text">{`Link to post ${title}`}</span>    
+    <span class="hidden assistive-text">{`Link to post ${title}`}</span>
     <Image
       src={cover}
       alt={`Link to post ${title}`}
-      width={1024}
-      height={1024 / 2}
+      width={600}
+      height={600 / 1.5}
       class="rounded-2xl shadow-xl mb-6 aspect-thumbnail object-cover"
     />
   </a>
-  <a href={`/blog/${slug}`} class="text-4xl text-zinc-900 mb-4 font-semibold inline-block">
-    <h2>{title}</h2>  
+  <a
+    href={`/blog/${slug}`}
+    class="text-4xl text-zinc-900 mb-4 font-semibold inline-block"
+  >
+    <h2>{title}</h2>
   </a>
   <p class="text-zinc-500 text-2xl mb-9 line-clamp-3">{body}</p>
 </article>
