@@ -6,20 +6,21 @@ import icon from "astro-icon";
 
 import svelte from "@astrojs/svelte";
 
+const devIntegrations = [
+  sentry({
+    dsn: "https://920f25fcf2b10d5a9514fac38287ab10@o1078821.ingest.sentry.io/4506504598192128",
+    sourceMapsUploadOptions: {
+      project: "astro-course-demo",
+      authToken: process.env.SENTRY_AUTH_TOKEN,
+    },
+  }),
+  spotlightjs(),
+];
+const isDev = process.env.NODE_ENV === "development" ? true : false;
+const extraIntegrations = isDev ? [...devIntegrations] : [];
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [
-    sentry({
-      dsn: "https://920f25fcf2b10d5a9514fac38287ab10@o1078821.ingest.sentry.io/4506504598192128",
-      sourceMapsUploadOptions: {
-        project: "astro-course-demo",
-        authToken: process.env.SENTRY_AUTH_TOKEN,
-      },
-    }),
-
-    tailwind(),
-    icon(),
-    svelte(),
-  ],
+  integrations: [tailwind(), icon(), svelte(), ...extraIntegrations],
   site: "https://rhythm.nation",
 });
