@@ -6,10 +6,20 @@ import icon from "astro-icon";
 
 import svelte from "@astrojs/svelte";
 
-const devIntegrations = [sentry(), spotlightjs()];
-
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), icon(), svelte()],
+  integrations: [
+    sentry({
+      dsn: "https://920f25fcf2b10d5a9514fac38287ab10@o1078821.ingest.sentry.io/4506504598192128",
+      sourceMapsUploadOptions: {
+        project: "astro-course-demo",
+        authToken: process.env.SENTRY_AUTH_TOKEN,
+      },
+    }),
+    spotlightjs(),
+    tailwind(),
+    icon(),
+    svelte(),
+  ],
   site: "https://rhythm.nation",
 });
