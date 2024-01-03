@@ -3,9 +3,8 @@ import sentry from "@sentry/astro";
 import spotlightjs from "@spotlightjs/astro";
 import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
-
 import svelte from "@astrojs/svelte";
-
+import vercel from "@astrojs/vercel/serverless";
 const devIntegrations = [
   sentry({
     dsn: "https://920f25fcf2b10d5a9514fac38287ab10@o1078821.ingest.sentry.io/4506504598192128",
@@ -22,5 +21,7 @@ const extraIntegrations = isDev ? [...devIntegrations] : [];
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), icon(), svelte(), ...extraIntegrations],
-  site: "https://rhythm.nation",
+  site: "https://astro-course-demo-six.vercel.app",
+  output: "server",
+  adapter: vercel(),
 });

@@ -1,5 +1,5 @@
 ---
-import { getCollection, type CollectionEntry } from "astro:content";
+import { getEntryBySlug } from "astro:content";
 import Main from "~/components/Main.astro";
 import Layout from "~/layouts/BaseLayout.astro";
 import { Icon } from "astro-icon/components";
@@ -8,19 +8,11 @@ import { Image, getImage } from "astro:assets";
 import TableOfContents from "~/components/TableOfContents.astro";
 import SocialShare from "~/components/SocialShare.astro";
 
-export const getStaticPaths = async () => {
-  const posts = await getCollection("posts");
-  return posts.map((post) => ({
-    params: { slug: post.slug },
-    props: { post },
-  }));
-};
+const { slug } = Astro.params;
+if (!slug) return Astro.redirect("/404");
+const post = await getEntryBySlug("posts", slug);
+if (!post) return Astro.redirect("/404");
 
-type Props = {
-  post: CollectionEntry<"posts">;
-};
-
-const { post } = Astro.props;
 const { title, cover, description } = post.data;
 const { Content, headings } = await post.render();
 const coverImageSrc = (await getImage({ src: cover })).src;
@@ -47,7 +39,7 @@ const coverImageSrc = (await getImage({ src: cover })).src;
           name="arrow-left"
           class="size-5 inline mr-2"
         />
-         Back to all posts
+        Back to all posts
       </a>
     </div>
     <H1 text={title} />

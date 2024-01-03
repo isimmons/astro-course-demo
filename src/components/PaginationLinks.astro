@@ -1,17 +1,20 @@
 ---
 type Props = {
-  prev?: string | undefined;
-  next?: string | undefined;
+  page: number;
+  numberOfPosts: number;
 };
 
-const { prev, next } = Astro.props;
+const { page, numberOfPosts } = Astro.props;
+const postsPerPage = Number(import.meta.env.POSTS_PER_PAGE);
+const hasPreviousPosts = page > 1;
+const hasNextPosts = numberOfPosts > page * postsPerPage;
 ---
 
 <div class="flex justify-between">
   {
-    prev ? (
+    hasPreviousPosts ? (
       <a
-        href={prev}
+        href={`?page=${page - 1}`}
         class="bg-teal-900 text-white py-3 px-6 rounded-xl"
       >
         Previous
@@ -21,9 +24,9 @@ const { prev, next } = Astro.props;
     )
   }
   {
-    next ? (
+    hasNextPosts ? (
       <a
-        href={next}
+        href={`?page=${page + 1}`}
         class="bg-teal-900 text-white py-3 px-6 rounded-xl"
       >
         Next
