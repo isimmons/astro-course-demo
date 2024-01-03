@@ -22,6 +22,6 @@ const extraIntegrations = isDev ? [...devIntegrations] : [];
 export default defineConfig({
   integrations: [tailwind(), icon(), svelte(), ...extraIntegrations],
   site: "https://astro-course-demo-six.vercel.app",
-  output: "server",
+  output: "hybrid",
   adapter: vercel(),
 });
