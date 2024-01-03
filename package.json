@@ -35,5 +35,14 @@
     "@prettier/plugin-xml": "^3.2.2",
     "@tailwindcss/typography": "^0.5.10",
     "prettier": "^3.1.1"
+  },
+  "optionalDependencies": {
+    "@sentry/cli-darwin": "2.23.1",
+    "@sentry/cli-linux-arm": "2.23.1",
+    "@sentry/cli-linux-arm64": "2.23.1",
+    "@sentry/cli-linux-i686": "2.23.1",
+    "@sentry/cli-linux-x64": "2.23.1",
+    "@sentry/cli-win32-i686": "2.23.1",
+    "@sentry/cli-win32-x64": "2.23.1"
   }
 }
