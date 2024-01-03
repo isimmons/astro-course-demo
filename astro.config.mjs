@@ -21,6 +21,7 @@ export default defineConfig({
       sourceMapsUploadOptions: {
         project: "astro-course-demo",
         authToken: process.env.SENTRY_AUTH_TOKEN,
+        telemetry: false,
       },
     }),
     ...extraIntegrations,
