@@ -21,6 +21,7 @@
     "@spotlightjs/astro": "^1.0.9",
     "@types/markdown-it": "^13.0.7",
     "@types/sanitize-html": "^2.9.5",
+    "@xata.io/client": "^0.28.3",
     "astro": "^4.0.8",
     "astro-icon": "^1.0.1",
     "date-fns": "^3.0.6",
