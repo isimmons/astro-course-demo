@@ -2,6 +2,7 @@
 import Footer from "~/components/Footer.astro";
 import Header from "~/components/Header.astro";
 import "@fontsource/cabin";
+import { getThumbnail } from "~/cloudinary";
 
 interface Props {
   title: string;
@@ -12,7 +13,7 @@ interface Props {
 const {
   title,
   description = "A community of music producers and enthusiasts",
-  image = "images/drums.jpg",
+  image = getThumbnail("A community of music producers and enthusiasts"),
 } = Astro.props;
 ---
 
@@ -29,7 +30,7 @@ const {
     <meta property="og:url" content={Astro.url} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:image" content={Astro.url + image} />
+    <meta property="og:image" content={image} />
     <meta property="og:image:alt" content={description} />
 
     <!-- twitter -->
@@ -39,7 +40,7 @@ const {
     <meta property="twitter:url" content={Astro.url} />
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={Astro.url + image} />
+    <meta property="twitter:image" content={image} />
     <meta property="twitter:image:alt" content={description} />
     <title>{title}</title>
   </head>
