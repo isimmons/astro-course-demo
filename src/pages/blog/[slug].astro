@@ -7,6 +7,7 @@ import H1 from "~/components/H1.astro";
 import { Image, getImage } from "astro:assets";
 import TableOfContents from "~/components/TableOfContents.astro";
 import SocialShare from "~/components/SocialShare.astro";
+import PostMeta from "~/components/PostMeta.astro";
 
 const { slug } = Astro.params;
 if (!slug) return Astro.redirect("/404");
@@ -43,6 +44,7 @@ const coverImageSrc = (await getImage({ src: cover })).src;
       </a>
     </div>
     <H1 text={title} />
+    <PostMeta post={post} />
     <Image
       src={cover}
       alt={title}

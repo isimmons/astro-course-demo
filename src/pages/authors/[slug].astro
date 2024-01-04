@@ -1,0 +1,52 @@
+---
+import { getCollection, getEntryBySlug } from "astro:content";
+import Layout from "~/layouts/BaseLayout.astro";
+import Main from "~/components/Main.astro";
+import { Icon } from "astro-icon/components";
+import H1 from "~/components/H1.astro";
+import PostsList from "~/components/PostsList.astro";
+
+const { slug } = Astro.params;
+if (!slug) return Astro.redirect("/404");
+
+const author = await getEntryBySlug("authors", slug);
+if (!author) return Astro.redirect("/404");
+
+const allPosts = await getCollection("posts");
+const posts = allPosts.filter((post) => post.data.author === author.slug);
+---
+
+<Layout title={`Posts by ${author.data.name}`}>
+  <Main>
+    <a
+      id="top"
+      href="#top"
+      class="text-xs text-transparent"
+      >Top Anchor</a
+    >
+    <div class="border-b-4 border-zinc-500 w-fit mb-16">
+      <a
+        href="/blog"
+        class="text-zinc-500 text-2xl"
+      >
+        <Icon
+          name="arrow-left"
+          class="size-5 inline mr-2"
+        />
+        Back to all posts
+      </a>
+    </div>
+    <H1
+      text={`Posts by ${author.data.name}`}
+      classes="mb-16"
+    />
+    <div class="mb-60">
+      <PostsList posts={posts} />
+    </div>
+    <a
+      href="#top"
+      class="text-zinc-500 underline"
+      >Back to Top</a
+    >
+  </Main>
+</Layout>
