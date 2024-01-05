@@ -12,7 +12,6 @@ const errors: Record<"email" | "password" | "form", string | null> = {
 };
 
 if (Astro.request.method === "POST") {
-  const redirectUrl = Astro.url.searchParams.get("redirect") ?? "/";
   const xata = new XataClient({ apiKey: import.meta.env.XATA_API_KEY });
   const data = await Astro.request.formData();
 
@@ -43,7 +42,7 @@ if (Astro.request.method === "POST") {
         secure: true,
       });
 
-      return Astro.redirect(redirectUrl, 302);
+      return Astro.redirect(Astro.url.searchParams.get("redirect") ?? "/", 302);
     }
   }
 }
