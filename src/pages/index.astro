@@ -13,6 +13,10 @@ const allPosts = await getCollection("posts");
 const recentPosts = allPosts.filter((p) => !p.data.featured).slice(0, 4);
 const featuredPosts = allPosts.filter((p) => p.data.featured);
 const categories = getCategoriesFromPosts(recentPosts);
+
+// playing with some ideas, see signup page where this session is set
+// const cookie = Astro.cookies.get("rhythm_session");
+// if (cookie) console.log(atob(cookie.value));
 ---
 
 <Layout

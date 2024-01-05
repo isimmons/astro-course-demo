@@ -58,4 +58,23 @@ Worked great and then a couple of deploys later this happened
 
 Remove sentry again and all is fine
 
+## I'm a dummy
+I had changed the name of my organization on sentry so it couldn't find the project any more. The name is encoded in the token so I had to generate a new token. Since it is in the token I don't think I needed to add to the plugin config but for good measure I added the 'org' property in sourceMapsUpload options.
 
+```js
+sentry({
+      dsn: "https://920f25fcf2b10d5a9514fac38287ab10@o1078821.ingest.sentry.io/4506504598192128",
+      sourceMapsUploadOptions: {
+        org: "tha-deciders",
+        project: "astro-course-demo",
+        authToken: process.env.SENTRY_AUTH_TOKEN,
+        telemetry: false,
+      },
+    }),
+```
+## encrypting/encoding cookies
+New in Astro 4, the option to override encoding of the cookie.
+See in signup.astro the commented out cookie set and decode in index.astro.
+I know this is "security through obscurity" in other words not really secure but it makes it difficult for someone to glance at the cookies if you walk away without locking your computer and see personal info like username and email. 
+
+Best solution would be to not store anything but the users id so a db call can be made to get the user info for use in the site. If other info has to be included, maybe real encryption/decryption should be used. This is really for physical security as csrf and cookie settings httpOnly and secure will protext against cross site forgery or harvesting user info. 

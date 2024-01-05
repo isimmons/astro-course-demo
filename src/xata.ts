@@ -12,7 +12,12 @@ const tables = [
     columns: [
       { name: "name", type: "string", notNull: true, defaultValue: "" },
       { name: "password", type: "string", notNull: true, defaultValue: "" },
-      { name: "email", type: "email", unique: true },
+      {
+        name: "email",
+        type: "email",
+        notNull: true,
+        defaultValue: "foo@foo.dev",
+      },
     ],
     revLinks: [{ column: "user", table: "comments" }],
   },
