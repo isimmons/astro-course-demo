@@ -17,7 +17,10 @@ const author = await getEntryBySlug("authors", post.data.author);
 ---
 
 <article>
-  <a href={`/blog/${slug}`}>
+  <a
+    href={`/blog/${slug}`}
+    data-astro-prefetch
+  >
     <span class="hidden assistive-text">{`Link to post ${title}`}</span>
     <Image
       src={cover}

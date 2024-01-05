@@ -12,6 +12,7 @@ const extraIntegrations = isDev ? [...devIntegrations] : [];
 
 // https://astro.build/config
 export default defineConfig({
+  prefetch: true,
   integrations: [
     tailwind(),
     icon(),
