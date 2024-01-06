@@ -2,7 +2,7 @@
 import Layout from "~/layouts/BaseLayout.astro";
 import H1 from "~/components/H1.astro";
 import Main from "~/components/Main.astro";
-import { XataClient } from "~/xata";
+import { xata } from "~/utils/xata";
 import bcrypt from "bcryptjs";
 
 const errors: Record<"email" | "password" | "form", string | null> = {
@@ -12,7 +12,6 @@ const errors: Record<"email" | "password" | "form", string | null> = {
 };
 
 if (Astro.request.method === "POST") {
-  const xata = new XataClient({ apiKey: import.meta.env.XATA_API_KEY });
   const data = await Astro.request.formData();
 
   // as with the signup, use zod to validate here

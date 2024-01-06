@@ -3,14 +3,12 @@ import H1 from "~/components/H1.astro";
 import Main from "~/components/Main.astro";
 import Layout from "~/layouts/BaseLayout.astro";
 
-import { XataClient } from "~/xata";
+import { xata } from "~/utils/xata";
 import bcrypt from "bcryptjs";
 
 if (Astro.request.method === "POST") {
   const data = await Astro.request.formData();
-  const xata = new XataClient({
-    apiKey: import.meta.env.XATA_API_KEY,
-  });
+
   // use zod for validation
   // but for now...
   const name = data.get("name") as string;
