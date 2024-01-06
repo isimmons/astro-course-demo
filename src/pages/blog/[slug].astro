@@ -11,6 +11,7 @@ import PostMeta from "~/components/PostMeta.astro";
 import CommentForm from "~/components/CommentForm.astro";
 import { xata } from "~/utils/xata";
 import CommentsList from "~/components/CommentsList.astro";
+import EmojiReactions from "~/components/EmojiReactions.svelte";
 
 const { slug } = Astro.params;
 if (!slug) return Astro.redirect("/404");
@@ -89,11 +90,15 @@ const coverImageSrc = (await getImage({ src: cover })).src;
         <Content />
       </div>
     </div>
-    <a
-      href="#top"
-      class="text-zinc-500 underline"
-      >Back to Top</a
-    >
+
+    <EmojiReactions />
+    <div class="mt-10">
+      <a
+        href="#top"
+        class="text-zinc-500 underline"
+        >Back to Top</a
+      >
+    </div>
   </Main>
   <div
     class="bg-teal-100/30 py-14 px-24 relative border-b border-teal-900 mt-32"
