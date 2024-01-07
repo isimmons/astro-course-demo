@@ -92,7 +92,7 @@ const reactionsDetails = await getReactionsDetailsByPost(post.slug, user.value);
     </div>
 
     <EmojiReactions
-      client:visible
+      client:load
       post={post.slug}
       {reactionsDetails}
     />

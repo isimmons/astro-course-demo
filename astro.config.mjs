@@ -16,7 +16,7 @@ export default defineConfig({
   integrations: [
     tailwind(),
     icon(),
-    svelte({ compilerOptions: { hydratable: true } }),
+    svelte(),
     sentry({
       dsn: "https://920f25fcf2b10d5a9514fac38287ab10@o1078821.ingest.sentry.io/4506504598192128",
       sourceMapsUploadOptions: {
