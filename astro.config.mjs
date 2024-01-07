@@ -22,7 +22,7 @@ export default defineConfig({
       sourceMapsUploadOptions: {
         org: "tha-deciders",
         project: "astro-course-demo",
-        authToken: process.env.SENTRY_AUTH_TOKEN,
+        authToken: import.meta.env.SENTRY_AUTH_TOKEN,
         telemetry: false,
       },
     }),
