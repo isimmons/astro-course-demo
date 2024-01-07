@@ -12,15 +12,14 @@ import CommentForm from "~/components/CommentForm.astro";
 import { xata } from "~/utils/xata";
 import CommentsList from "~/components/CommentsList.astro";
 import EmojiReactions from "~/components/EmojiReactions.svelte";
+import { getReactionsDetailsByPost } from "~/utils/emoji";
 
 const { slug } = Astro.params;
 if (!slug) return Astro.redirect("/404");
+const user = Astro.cookies.get("userId");
+if (!user?.value) return Astro.redirect("/login");
 
 if (Astro.request.method === "POST") {
-  const user = Astro.cookies.get("userId");
-
-  if (!user?.value) return Astro.redirect("/login");
-
   // VALIDATE WITH ZOD!
   const data = await Astro.request.formData();
   const comment = data.get("comment") as string;
@@ -45,6 +44,7 @@ const comments = await xata.db.comments
 const { title, cover, description } = post.data;
 const { Content, headings } = await post.render();
 const coverImageSrc = (await getImage({ src: cover })).src;
+const reactionsDetails = await getReactionsDetailsByPost(post.slug, user.value);
 ---
 
 <Layout
@@ -91,7 +91,11 @@ const coverImageSrc = (await getImage({ src: cover })).src;
       </div>
     </div>
 
-    <EmojiReactions />
+    <EmojiReactions
+      client:visible
+      post={post.slug}
+      {reactionsDetails}
+    />
     <div class="mt-10">
       <a
         href="#top"
