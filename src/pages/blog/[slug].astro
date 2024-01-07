@@ -12,8 +12,10 @@ import CommentForm from "~/components/CommentForm.astro";
 import { xata } from "~/utils/xata";
 import CommentsList from "~/components/CommentsList.astro";
 // import EmojiReactions from "../../components/EmojiReactions.svelte";
-const EmojiReactions = import("../../components/EmojiReactions.svelte");
 import { getReactionsDetailsByPost } from "~/utils/emoji";
+const EmojiReactions = import("../../components/EmojiReactions.svelte").then(
+  (component) => component,
+);
 
 const { slug } = Astro.params;
 if (!slug) return Astro.redirect("/404");
