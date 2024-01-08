@@ -32,5 +32,6 @@ export default defineConfig({
   output: "server",
   adapter: vercel({
     imageService: true,
+    includeFiles: ["./src/components/EmojiReactions.svelte"],
   }),
 });
