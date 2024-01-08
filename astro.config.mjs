@@ -12,7 +12,6 @@ const extraIntegrations = isDev ? [...devIntegrations] : [];
 
 // https://astro.build/config
 export default defineConfig({
-  prefetch: true,
   integrations: [
     tailwind(),
     icon(),
@@ -32,6 +31,5 @@ export default defineConfig({
   output: "server",
   adapter: vercel({
     imageService: true,
-    includeFiles: ["./src/components/EmojiReactions.svelte"],
   }),
 });
