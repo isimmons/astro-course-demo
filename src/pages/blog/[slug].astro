@@ -93,7 +93,7 @@ const reactionsDetails = await getReactionsDetailsByPost(post.slug, user.value);
     </div>
 
     <EmojiReactions
-      client:only="svelte"
+      client:visible
       post={post.slug}
       {reactionsDetails}
     />
