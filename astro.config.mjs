@@ -16,15 +16,15 @@ export default defineConfig({
     tailwind(),
     icon(),
     svelte(),
-    sentry({
-      dsn: "https://920f25fcf2b10d5a9514fac38287ab10@o1078821.ingest.sentry.io/4506504598192128",
-      sourceMapsUploadOptions: {
-        org: "tha-deciders",
-        project: "astro-course-demo",
-        authToken: import.meta.env.SENTRY_AUTH_TOKEN,
-        telemetry: false,
-      },
-    }),
+    // sentry({
+    //   dsn: "https://920f25fcf2b10d5a9514fac38287ab10@o1078821.ingest.sentry.io/4506504598192128",
+    //   sourceMapsUploadOptions: {
+    //     org: "tha-deciders",
+    //     project: "astro-course-demo",
+    //     authToken: import.meta.env.SENTRY_AUTH_TOKEN,
+    //     telemetry: false,
+    //   },
+    // }),
     ...extraIntegrations,
   ],
   site: "https://astro-course-demo-six.vercel.app",
