@@ -79,4 +79,3 @@ I know this is "security through obscurity" in other words not really secure but
 
 Best solution would be to not store anything but the users id so a db call can be made to get the user info for use in the site. If other info has to be included, maybe real encryption/decryption should be used. This is really for physical security as csrf and cookie settings httpOnly and secure will protext against cross site forgery or harvesting user info. 
 
-trigger new deploy
