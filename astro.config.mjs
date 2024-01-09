@@ -6,10 +6,6 @@ import icon from "astro-icon";
 import svelte from "@astrojs/svelte";
 import vercel from "@astrojs/vercel/serverless";
 
-const devIntegrations = [spotlightjs()];
-const isDev = process.env.NODE_ENV === "development" ? true : false;
-const extraIntegrations = isDev ? [...devIntegrations] : [];
-
 // https://astro.build/config
 export default defineConfig({
   integrations: [
@@ -25,7 +21,7 @@ export default defineConfig({
         telemetry: false,
       },
     }),
-    ...extraIntegrations,
+    spotlightjs(),
   ],
   site: "https://astro-course-demo-six.vercel.app",
   output: "server",

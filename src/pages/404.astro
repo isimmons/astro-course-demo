@@ -1,10 +1,10 @@
 ---
 import H1 from "~/components/H1.astro";
 import Main from "~/components/Main.astro";
-import Layout from "~/layouts/BaseLayout.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
 ---
 
-<Layout title="Not Found">
+<BaseLayout title="Not Found">
   <Main>
     <div
       class="flex flex-col gap-2 w-1/2 mx-auto items-center mt-24 bg-teal-900 py-24 rounded-md text-teal-200"
@@ -16,4 +16,4 @@ import Layout from "~/layouts/BaseLayout.astro";
       <p class="pt-12 text-2xl">Not the page you're looking for</p>
     </div>
   </Main>
-</Layout>
+</BaseLayout>

@@ -6,7 +6,7 @@ import H1 from "~/components/H1.astro";
 import Main from "~/components/Main.astro";
 import PaginationLinks from "~/components/PaginationLinks.astro";
 import PostsList from "~/components/PostsList.astro";
-import Layout from "~/layouts/BaseLayout.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
 import { Icon } from "astro-icon/components";
 
 const page = Number(Astro.url.searchParams.get("page")) || 1;
@@ -25,7 +25,7 @@ const posts = postsByCategory.slice(start, end);
 if (posts.length < 1) return Astro.redirect("/404");
 ---
 
-<Layout
+<BaseLayout
   title="Blog - Rhythm Nation"
   description="Read and learn from music producers and enthusiasts"
   image="images/drums.jpg"
@@ -64,4 +64,4 @@ if (posts.length < 1) return Astro.redirect("/404");
       />
     </div>
   </Main>
-</Layout>
+</BaseLayout>

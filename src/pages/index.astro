@@ -5,7 +5,7 @@ import FeaturedPost from "~/components/FeaturedPost.astro";
 import H1 from "~/components/H1.astro";
 import Main from "~/components/Main.astro";
 import PostsList from "~/components/PostsList.astro";
-import Layout from "~/layouts/BaseLayout.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
 import { getCategoriesFromPosts } from "~/utils";
 
 const allPosts = await getCollection("posts");
@@ -19,7 +19,7 @@ const categories = getCategoriesFromPosts(recentPosts);
 // if (cookie) console.log(atob(cookie.value));
 ---
 
-<Layout
+<BaseLayout
   title="Blog - Rhythm Nation"
   description="Read and learn from music producers and enthusiasts"
 >
@@ -45,4 +45,4 @@ const categories = getCategoriesFromPosts(recentPosts);
       >
     </div>
   </Main>
-</Layout>
+</BaseLayout>

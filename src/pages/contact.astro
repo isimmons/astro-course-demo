@@ -1,11 +1,11 @@
 ---
-import Layout from "~/layouts/BaseLayout.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
 import H1 from "~/components/H1.astro";
 import Main from "~/components/Main.astro";
 import ContactForm from "~/components/ContactForm.svelte";
 ---
 
-<Layout
+<BaseLayout
   title="Contact - Rhythm Nation"
   description="Contact us"
   image="/images/drums.jpg"
@@ -16,6 +16,6 @@ import ContactForm from "~/components/ContactForm.svelte";
       <ContactForm client:load />
     </div>
   </Main>
-</Layout>
+</BaseLayout>
 
 <script></script>

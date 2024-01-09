@@ -1,5 +1,5 @@
 ---
-import Layout from "~/layouts/BaseLayout.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
 import H1 from "~/components/H1.astro";
 import Main from "~/components/Main.astro";
 import { xata } from "~/utils/xata";
@@ -47,7 +47,7 @@ if (Astro.request.method === "POST") {
 }
 ---
 
-<Layout title="Login">
+<BaseLayout title="Login">
   <Main>
     <H1 text="Login" />
     <form
@@ -91,4 +91,4 @@ if (Astro.request.method === "POST") {
       >
     </p>
   </Main>
-</Layout>
+</BaseLayout>

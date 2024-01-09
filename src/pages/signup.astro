@@ -1,7 +1,7 @@
 ---
 import H1 from "~/components/H1.astro";
 import Main from "~/components/Main.astro";
-import Layout from "~/layouts/BaseLayout.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
 
 import { xata } from "~/utils/xata";
 import bcrypt from "bcryptjs";
@@ -57,7 +57,7 @@ if (Astro.request.method === "POST") {
 }
 ---
 
-<Layout title="Sign Up">
+<BaseLayout title="Sign Up">
   <Main>
     <H1 text="Sign Up" />
     <form method="POST">
@@ -108,4 +108,4 @@ if (Astro.request.method === "POST") {
       >
     </p>
   </Main>
-</Layout>
+</BaseLayout>

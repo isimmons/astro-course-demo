@@ -1,7 +1,7 @@
 ---
 import { getEntryBySlug } from "astro:content";
 import Main from "~/components/Main.astro";
-import Layout from "~/layouts/BaseLayout.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
 import { Icon } from "astro-icon/components";
 import H1 from "~/components/H1.astro";
 import { Image, getImage } from "astro:assets";
@@ -48,7 +48,7 @@ const coverImageSrc = (await getImage({ src: cover })).src;
 const reactionsDetails = await getReactionsDetailsByPost(post.slug, user.value);
 ---
 
-<Layout
+<BaseLayout
   title={title}
   image={coverImageSrc}
   description={description}
@@ -127,4 +127,4 @@ const reactionsDetails = await getReactionsDetailsByPost(post.slug, user.value);
     </div>
     <CommentsList comments={comments} />
   </div>
-</Layout>
+</BaseLayout>

@@ -1,6 +1,6 @@
 ---
 import { getCollection, getEntryBySlug } from "astro:content";
-import Layout from "~/layouts/BaseLayout.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
 import Main from "~/components/Main.astro";
 import { Icon } from "astro-icon/components";
 import H1 from "~/components/H1.astro";
@@ -16,7 +16,7 @@ const allPosts = await getCollection("posts");
 const posts = allPosts.filter((post) => post.data.author === author.slug);
 ---
 
-<Layout title={`Posts by ${author.data.name}`}>
+<BaseLayout title={`Posts by ${author.data.name}`}>
   <Main>
     <a
       id="top"
@@ -49,4 +49,4 @@ const posts = allPosts.filter((post) => post.data.author === author.slug);
       >Back to Top</a
     >
   </Main>
-</Layout>
+</BaseLayout>
